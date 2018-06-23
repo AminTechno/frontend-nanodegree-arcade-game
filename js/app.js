@@ -17,38 +17,80 @@ class Enemy {
         // You should multiply any movement by the dt parameter
         // which will ensure the game runs at the same speed for
         // all computers.
-    };
+        
+        // make the enemies move
+        this.x += dt * this.speed;
+
+        // make enemies apear randomly 
+
+        // Handles collision with the Player
+
+
+    }
 
     // Draw the enemy on the screen, required method for game
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    };
+    }
 };
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player {
-    constructor(x, y) {
-        this.sprite = 'image/char-cat-horn-girl.png';
+    constructor (x, y) {
+        this.sprite = 'images/char-horn-girl.png';
         this.x = x;
         this.y = y;
     }
 
-    update() {}
+    update() {
+        
+    }
 
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
+// handleInput should receive user input, allowedKeys (the key which was pressed)
+// and move the player according to that input. In particular:
+    handleInput(keyDirection) {
+        switch(keyDirection) {
+            case 'left':
+                (this.x <= 0) ? this.x += 400 : this.x -= 100;
+                break;
+            case 'up':
+                (this.y < 72) ? this.y = 404 : this.y -= 83;
+                console.log(this.y);
+                break;
+            case 'right':
+                (this.x >= 400) ? this.x -= 400 : this.x += 100;
+                break;
+            case 'down':
+                (this.y >= 404) ? this.y = 404 : this.y += 83;
+            default:
+                //code block
+        }
+    }
 
-    handleInput() {}
+    reset() {
+
+    }
 }
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
+
+const enemy1 = new Enemy(53, 53, 50);
+allEnemies.push(enemy1);
+const enemy2 = new Enemy(147, 147, 100);
+allEnemies.push(enemy2);
+const enemy3 = new Enemy(170, 60, 80);
+allEnemies.push(enemy3);
+
+
 // Place the player object in a variable called player
-const player = new Player(10, 10);
+const player = new Player(200, 404);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
