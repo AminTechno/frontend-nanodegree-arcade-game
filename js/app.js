@@ -22,7 +22,10 @@ class Enemy {
         this.x += dt * this.speed;
 
         // make enemies apear randomly 
-
+        if (this.x >= 510) {
+            this.x = 5;
+            this.speed = Math.ceil(Math.random() * 200)+100;
+        } 
         // Handles collision with the Player
 
 
@@ -81,12 +84,18 @@ class Player {
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 
-const enemy1 = new Enemy(53, 53, 50);
+const enemy0 = new Enemy(0, 72, 150);
+allEnemies.push(enemy0);
+const enemy1 = new Enemy(53, 72, 50);
 allEnemies.push(enemy1);
-const enemy2 = new Enemy(147, 147, 100);
+const enemy2 = new Enemy(147, 155, 100);
 allEnemies.push(enemy2);
-const enemy3 = new Enemy(170, 60, 80);
+const enemy3 = new Enemy(85, 155, 80);
 allEnemies.push(enemy3);
+const enemy4 = new Enemy(238, 238, 180);
+allEnemies.push(enemy4);
+const enemy5 = new Enemy(8, 238, 120);
+allEnemies.push(enemy5);
 
 
 // Place the player object in a variable called player
