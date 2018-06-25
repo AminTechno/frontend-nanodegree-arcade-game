@@ -1,10 +1,12 @@
-# Keep calm and move around the bugs
+# Keep calm and avoid the bugs
 
 frontend-nanodegree-arcade-game
 ===============================
 
 ### 1st - HOW to RUN the GAME
-Open the [Arcarde-Game](https://bluessista.github.io/frontend-nanodegree-arcade-game/) The Game will start with your first move. A move is when you press one of your arrow keys on the keyboard.
+Open the [Arcade-Game](https://bluessista.github.io/frontend-nanodegree-arcade-game/) (<-- by clicking the link) in the Browser. Otherwise you can download or clone the game from [this Github repo](https://github.com/bluessista/frontend-nanodegree-arcade-game) and open the index.html file in your browser. 
+
+The Game will start with your first move. A move is when you press your arrow keys on the keyboard.
 
 ### 2nd - HOW to PLAY the GAME 
 You are the little Girl on the grass.
